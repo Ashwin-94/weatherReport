@@ -1,0 +1,28 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">weather Report</a>
+  <button routerLink="/logout" routerLinkActive="active" class="btn btn-danger my-2 my-sm-0"
+    type="submit">Logout</button>
+</nav>
+<div class="album py-5 bg-light">
+  <div class="container-fluid">
+    <div class="row">
+      <!-- card-1 -->
+      <div *ngFor="let card of cardData" class="col-12 col-sm-12 col-md-6 col-lg-4	col-xl-4">
+        <div style="min-height:300px;" class="card border border-primary" (click)="showSearch(card.card)">
+          <div *ngIf="card.search" class="card-header">
+            <form class="form-inline">
+              <div class="form-group mx-sm-3 mb-2">
+                <input type="text" class="form-control" id="inputPassword2" placeholder="Enter City">
+              </div>
+              <button type="button" (click)="getweather(card.card);" class="btn btn-primary mb-2">Search</button>
+            </form>
+          </div>
+          <div class="card-body">
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
