@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { WeatherService } from 'src/app/services/weather.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -10,7 +11,7 @@ import { WeatherService } from 'src/app/services/weather.service';
 export class WeatherStatusComponent implements OnInit {
   cardData = [];
   cityName: string;
-  constructor(private weather: WeatherService) { }
+  constructor(private weather: WeatherService, private router: Router) { }
 
   ngOnInit() {
     if (JSON.parse(sessionStorage.getItem('cardData')) != undefined && JSON.parse(sessionStorage.getItem('cardData')) != '' && JSON.parse(sessionStorage.getItem('cardData')) != null) {
@@ -107,5 +108,7 @@ export class WeatherStatusComponent implements OnInit {
     this.cardData[index].error = '';
     this.cardData[index].background = '';
   }
-
+logout() {
+  this.router.navigate(['/logout']);
+}
 }
