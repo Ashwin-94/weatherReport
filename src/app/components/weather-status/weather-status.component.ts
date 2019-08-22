@@ -110,5 +110,6 @@ export class WeatherStatusComponent implements OnInit {
   }
 logout() {
   this.router.navigate(['/logout']);
+  sessionStorage.clear();
 }
 }
