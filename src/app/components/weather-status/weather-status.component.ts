@@ -108,8 +108,8 @@ export class WeatherStatusComponent implements OnInit {
     this.cardData[index].error = '';
     this.cardData[index].background = '';
   }
-logout() {
-  this.router.navigate(['/logout']);
-  sessionStorage.clear();
-}
+  logout() {
+    sessionStorage.clear();
+    this.router.navigate(['/logout']);
+  }
 }
