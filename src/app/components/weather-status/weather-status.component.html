@@ -19,8 +19,9 @@
             </form>
           </div>
           <div class="card-body {{card.background}}">
-            <p *ngIf="card.name"><b>City:</b> {{card.name}}<img style="float:right;background: white"
-                src="assets/{{card.weather[0].icon}}.png" /></p>
+            <p *ngIf="card.name"><b>City:</b> {{card.name}}
+              <img style="float:right;background:white" src="assets/{{card.weather[0].icon}}.png" />
+            </p>
             <p *ngIf="card.latitude"><b>Latitude:</b> {{card.latitude}}</p>
             <p *ngIf="card.longitude"><b>Longitude:</b> {{card.longitude}}</p>
             <p *ngIf="card.weather"><b>Weather:</b> {{card.weather[0].main}}, {{card.weather[0].description}}</p>
