@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">weather Report</a>
-  <button routerLink="/logout" routerLinkActive="active" class="btn btn-danger my-2 my-sm-0"
+  <a class="navbar-brand float-left" href="#">weather Report</a>
+  <button routerLink="/logout" routerLinkActive="active" class="btn btn-danger my-2 my-sm-0 float-right"
     type="submit">Logout</button>
 </nav>
 <div class="album py-5 bg-light">
@@ -8,21 +8,36 @@
     <div class="row">
       <!-- card-1 -->
       <div *ngFor="let card of cardData" class="col-12 col-sm-12 col-md-6 col-lg-4	col-xl-4">
-        <div style="min-height:300px;" class="card border border-primary" (click)="showSearch(card.card)">
-          <div *ngIf="card.search" class="card-header">
+        <div style="min-height:600px;margin-top:20px;" class="card border border-primary"
+          (click)="showSearch(card.card)">
+          <div *ngIf="card.search" class="card-header custom-card-header">
             <form class="form-inline">
               <div class="form-group mx-sm-3 mb-2">
-                <input type="text" class="form-control" id="inputPassword2" placeholder="Enter City">
+                <input id="input-{{card.card}}" type="text" class="form-control" name="city" placeholder="Enter City">
               </div>
               <button type="button" (click)="getweather(card.card);" class="btn btn-primary mb-2">Search</button>
             </form>
           </div>
-          <div class="card-body">
-
+          <div class="card-body {{card.background}}">
+            <p *ngIf="card.name"><b>City:</b> {{card.name}}<img style="float:right;background: white"
+                src="../../../assets/{{card.weather[0].icon}}.png" /></p>
+            <p *ngIf="card.latitude"><b>Latitude:</b> {{card.latitude}}</p>
+            <p *ngIf="card.longitude"><b>Longitude:</b> {{card.longitude}}</p>
+            <p *ngIf="card.weather"><b>Weather:</b> {{card.weather[0].main}}, {{card.weather[0].description}}</p>
+            <p *ngIf="card.temp"><b>Temperature:</b> {{card.temp}}</p>
+            <p *ngIf="card.pressure"><b>Pressure:</b> {{card.pressure}}</p>
+            <p *ngIf="card.humidity"><b>Humidity:</b> {{card.humidity}}</p>
+            <p *ngIf="card.temp_min"><b>Minimum Temperature:</b> {{card.temp_min}}</p>
+            <p *ngIf="card.temp_max"><b>Maximum Temperature:</b> {{card.temp_max}}</p>
+            <p *ngIf="card.visibility"><b>Visibility:</b> {{card.visibility}}</p>
+            <p *ngIf="card.wind"><b>Wind:</b> Speed-{{card.wind.speed}} Degree-{{card.wind.deg}}</p>
+            <p *ngIf="card.clouds"><b>Clouds:</b> {{card.clouds}}</p>
+            <div *ngIf="card.error" class="alert alert-danger" role="alert">
+              {{card.error}}
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-

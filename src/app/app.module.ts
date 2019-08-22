@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { WeatherStatusComponent } from './components/weather-status/weather-status.component';
 import { WelcomePageComponent } from './components/welcome-page/welcome-page.component';
 import { LogoutPageComponent } from './components/logout-page/logout-page.component';
+import { HttpClientModule } from '@angular/common/http'; 
+import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,11 @@ import { LogoutPageComponent } from './components/logout-page/logout-page.compon
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    CommonModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

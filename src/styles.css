@@ -10,8 +10,52 @@
     width: 100%;
 }
 .start-button {
-    margin: 50% auto 50% auto;
+    margin: auto;
     width: 300px;
     height: 100px;
     font-size: 40px !important;
+    margin-top: 250px;
+}
+.clear-sky {
+    background-image: url("./assets/clear-sky.jpg");
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover;
+}
+.rain {
+    background-image: url("./assets/raining.jpg");
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover;
+}
+.cloudy {
+    background-image: url("./assets/cloudy.jpg");
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover;
+}
+.thunderstorm {
+    background-image: url("./assets/thunder-storm.jpg");
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover;
+    color: azure;
+}
+.drizzle {
+    background-image: url("./assets/drizzle.jpg");
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover;
+}
+.snow {
+    background-image: url("./assets/snow.jpg");
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover;
+}
+.atmos {
+    background-image: url("./assets/atmosphere.jpg");
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover;
 }
